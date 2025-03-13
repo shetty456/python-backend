@@ -81,5 +81,5 @@ python main.py list in-progress
 This project is licensed under the MIT License.
 
 ## Author
-SUNIL Hanamshetty
+Sunil Hanamshetty
 
