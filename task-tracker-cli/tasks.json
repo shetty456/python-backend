@@ -1,32 +1,11 @@
 {
     "tasks": [
         {
-            "id": 2,
-            "description": "Life is wonderful",
-            "status": "in-progress",
-            "createdAt": "2025-03-13T09:30:27.172223",
-            "updatedAt": "2025-03-13T10:56:26.024570"
-        },
-        {
-            "id": 3,
-            "description": "Life is wonderful",
-            "status": "todo",
-            "createdAt": "2025-03-13T09:39:23.533893",
-            "updatedAt": "2025-03-13T09:39:23.533893"
-        },
-        {
-            "id": 4,
-            "description": "Life is wonderful",
-            "status": "todo",
-            "createdAt": "2025-03-13T09:40:49.490550",
-            "updatedAt": "2025-03-13T09:40:49.490550"
-        },
-        {
-            "id": 5,
+            "id": 1,
             "description": "Buy groceries",
-            "status": "todo",
-            "createdAt": "2025-03-13T09:55:25.494156",
-            "updatedAt": "2025-03-13T09:55:25.494156"
+            "status": "done",
+            "createdAt": "2025-03-13T12:27:46.706578",
+            "updatedAt": "2025-03-13T12:28:00.466480"
         }
     ]
 }
