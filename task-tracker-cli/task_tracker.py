@@ -126,3 +126,55 @@ class TaskTracker:
         self._save_data(data)
 
         print(f"Task {task_id} removed successfully.")
+
+    # status update function
+    def update_task_status(self, status, task_id):
+        """Update a task status in the task list"""
+
+        data = self._load_data()
+
+        if "tasks" not in data or not isinstance(data["tasks"], list):
+            print("⚠️ No tasks found.")
+            return
+
+        timestamp = datetime.now().isoformat()
+
+        # find and update the task
+        updated = False
+        for task in data["tasks"]:
+            if task["id"] == task_id:
+                task.update(
+                    {
+                        "status": status.value,
+                        "updatedAt": timestamp,
+                    }
+                )
+                updated = True
+                break  # Exit loop after updating the task status
+
+        if updated:
+            self._save_data(data)
+            print(f"Task {task_id} status updated successfully.")
+        else:
+            print(f"Task with ID {task_id} not found.")
+
+    # listing of tasks
+    def list_tasks(self, status=None):
+        data = self._load_data()
+
+        if "tasks" not in data or not isinstance(data["tasks"], list):
+            print("⚠️ No tasks found.")
+            return
+
+        # Filter tasks if status is provided, otherwise return all
+        filtered_tasks = [
+            task
+            for task in data["tasks"]
+            if status is None or task["status"] == status.value
+        ]
+
+        if not filtered_tasks:
+            print(f"⚠️ No tasks found with status '{status}'.")
+        else:
+            for task in filtered_tasks:
+                print(f"📌 {task['id']}: {task['description']} ({task['status']})")

@@ -3,9 +3,9 @@
         {
             "id": 2,
             "description": "Life is wonderful",
-            "status": "todo",
+            "status": "in-progress",
             "createdAt": "2025-03-13T09:30:27.172223",
-            "updatedAt": "2025-03-13T09:30:27.172223"
+            "updatedAt": "2025-03-13T10:56:26.024570"
         },
         {
             "id": 3,
