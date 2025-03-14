@@ -6,22 +6,28 @@ import argparse
 
 def fetch_github_user_activity(username: str):
     """Fetch recent GitHub activity of a user using the GitHub API."""
-    url = f"https://api.github.com/users/{username}/events"
-    response = requests.get(url)
+    try:
+        url = f"https://api.github.com/users/{username}/events"
+        response = requests.get(url)
 
-    if response.status_code == 200:
-        data = response.json()
-        if not data:  # Handle users with no recent activity
-            print(f"No recent activity found for GitHub user: {username}")
-            return None
-        return data
-    elif response.status_code == 404:
-        print(f"Error: GitHub user '{username}' not found.")
-    elif response.status_code == 403:
-        print("Error: API rate limit exceeded. Try again later.")
-    else:
-        print(f"Error: {response.status_code} - {response.text}")
-    return None
+        if response.status_code == 200:
+            data = response.json()
+            if not data:  # Handle users with no recent activity
+                print(f"No recent activity found for GitHub user: {username}")
+                return None
+            return data
+        elif response.status_code == 404:
+            print(f"Error: GitHub user '{username}' not found.")
+        elif response.status_code == 403:
+            print("Error: API rate limit exceeded. Try again later.")
+        else:
+            print(f"Error: {response.status_code} - {response.text}")
+        return None
+    except ValueError:
+        print(f"Sorry, some error occured")
+        return None
+
+
 
 
 async def main():
